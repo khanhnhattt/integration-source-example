@@ -1,0 +1,35 @@
+{
+  "key": "set_my_string",
+  "version": 1,
+  "name": "Set myString",
+  "description": "Set or replace myString on one JSON object and return the updated object.",
+  "icon": "standalone",
+  "category": "others",
+  "style": "SCRIPT",
+  "parameter_schema": {
+    "parameters": [
+      {
+        "key": "json",
+        "description": "The input JSON object. All fields except myString are preserved.",
+        "type": "OBJECT",
+        "required": true
+      },
+      {
+        "key": "myString",
+        "description": "Resolved text to assign to myString. Defaults to an empty string when omitted.",
+        "type": "STRING",
+        "required": false,
+        "ui": {
+          "label": "My String",
+          "default_value": ""
+        }
+      }
+    ]
+  },
+  "locales": {
+    "de": {
+      "name": "myString setzen",
+      "description": "Setzt oder ersetzt myString in einem JSON-Objekt und gibt das aktualisierte Objekt zurück."
+    }
+  }
+}

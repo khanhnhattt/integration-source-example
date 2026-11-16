@@ -1,0 +1,32 @@
+[
+  {
+    "name": "preserve existing fields",
+    "params": { "json": { "id": 7, "active": false, "count": 0, "empty": "", "nested": { "keep": [null, 1] } }, "myString": "hello" },
+    "expected": { "id": 7, "active": false, "count": 0, "empty": "", "nested": { "keep": [null, 1] }, "myString": "hello" }
+  },
+  {
+    "name": "omitted text defaults to empty",
+    "params": { "json": {} },
+    "expected": { "myString": "" }
+  },
+  {
+    "name": "overwrite existing text",
+    "params": { "json": { "myString": "old", "keep": true }, "myString": "new" },
+    "expected": { "myString": "new", "keep": true }
+  },
+  {
+    "name": "explicit empty text is preserved",
+    "params": { "json": { "myString": "old" }, "myString": "" },
+    "expected": { "myString": "" }
+  },
+  {
+    "name": "default overwrites existing text",
+    "params": { "json": { "myString": "old" } },
+    "expected": { "myString": "" }
+  },
+  {
+    "name": "text stays literal",
+    "params": { "json": { "__proto__": { "keep": true } }, "myString": "  Grüße 🌍\n={{ $json.value }}  " },
+    "expected": { "__proto__": { "keep": true }, "myString": "  Grüße 🌍\n={{ $json.value }}  " }
+  }
+]
