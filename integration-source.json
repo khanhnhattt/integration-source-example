@@ -1,6 +1,6 @@
 {
-  "slug": "example",
-  "name": "Example Node",
+  "slug": "example_n8n_conversion",
+  "name": "Example N8N Conversion",
   "publisher": "Local conversion",
   "spec_version": 1,
   "version": "1.0.0"
